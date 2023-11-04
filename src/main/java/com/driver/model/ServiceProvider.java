@@ -10,9 +10,9 @@ public class ServiceProvider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int serviceProviderId;
+    private  int id;
 
-    private String serviceProviderName;
+    private String name;
 
     @ManyToOne
     @JoinColumn
@@ -30,29 +30,29 @@ public class ServiceProvider {
     public ServiceProvider() {
     }
 
-    public ServiceProvider(int serviceProviderId, String serviceProviderName, Admin admin, List<User> users, List<Country> countryList, List<Connection> connectionList) {
-        this.serviceProviderId = serviceProviderId;
-        this.serviceProviderName = serviceProviderName;
+    public ServiceProvider(int id, String name, Admin admin, List<User> users, List<Country> countryList, List<Connection> connectionList) {
+        this.id = id;
+        this.name = name;
         this.admin = admin;
         this.users = users;
         this.countryList = countryList;
         this.connectionList = connectionList;
     }
 
-    public int getServiceProviderId() {
-        return serviceProviderId;
+    public int getId() {
+        return id;
     }
 
-    public void setServiceProviderId(int serviceProviderId) {
-        this.serviceProviderId = serviceProviderId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getServiceProviderName() {
-        return serviceProviderName;
+    public String getName() {
+        return name;
     }
 
-    public void setServiceProviderName(String serviceProviderName) {
-        this.serviceProviderName = serviceProviderName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Admin getAdmin() {

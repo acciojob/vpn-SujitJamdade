@@ -42,7 +42,7 @@ public class AdminServiceImpl implements AdminService {
 
         ServiceProvider serviceProvider=new ServiceProvider();
 
-        serviceProvider.setServiceProviderName(providerName);
+        serviceProvider.setName(providerName);
 
         serviceProvider.setAdmin(admin);
 

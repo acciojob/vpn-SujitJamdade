@@ -41,8 +41,8 @@ public class ConnectionServiceImpl implements ConnectionService {
         for(ServiceProvider serviceProvider1:serviceProviderList){
             List<Country> countryList=serviceProvider1.getCountryList();
             for(Country country1:countryList){
-                if(countryName.equalsIgnoreCase(country1.getCountryName().toString()) && x > serviceProvider1.getServiceProviderId()){
-                    x=serviceProvider1.getServiceProviderId();
+                if(countryName.equalsIgnoreCase(country1.getCountryName().toString()) && x > serviceProvider1.getId()){
+                    x=serviceProvider1.getId();
                     serviceProvider=serviceProvider1;
                     country=country1;
                 }
@@ -52,7 +52,7 @@ public class ConnectionServiceImpl implements ConnectionService {
             Connection connection=new Connection();
             connection.setUser(user);
             connection.setServiceProvider(serviceProvider);
-            user.setMaskedIp(country.getCode()+"."+serviceProvider.getServiceProviderId()+"."+user.getId());
+            user.setMaskedIp(country.getCode()+"."+serviceProvider.getId()+"."+user.getId());
             user.setConnected(true);
             user.getConnectionList().add(connection);
             serviceProvider.getConnectionList().add(connection);
